@@ -1,0 +1,12 @@
+name: nasdaq_data_producer
+language: Python
+variables:
+  - name: output
+    inputType: OutputTopic
+    description: Name of the output topic to write into
+    defaultValue: nasdaq_stocks
+    required: true
+dockerfile: dockerfile
+runEntryPoint: main.py
+defaultFile: main.py
+libraryItemId: starter-source
