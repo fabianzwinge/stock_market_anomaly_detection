@@ -9,7 +9,6 @@ import glob
 import pandas as pd
 import tqdm
 import json
-import random
 
 
 from dotenv import load_dotenv
