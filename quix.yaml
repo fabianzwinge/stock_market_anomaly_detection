@@ -4,4 +4,37 @@
 metadata:
   version: 1.0
 
+# This section describes the Deployments of the data pipeline
+deployments:
+  - name: nasdaq_data_producer
+    application: nasdaq_data_producer
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 800
+      replicas: 1
+    variables:
+      - name: output
+        inputType: OutputTopic
+        value: nasdaq_stocks
+  - name: anomaly_detector
+    application: anomaly_detector
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 800
+      replicas: 1
+    variables:
+      - name: input
+        inputType: InputTopic
+        value: nasdaq_stocks
+      - name: output
+        inputType: OutputTopic
+        value: anomalies
 
+# This section describes the Topics of the data pipeline
+topics:
+  - name: nasdaq_stocks
+  - name: anomalies

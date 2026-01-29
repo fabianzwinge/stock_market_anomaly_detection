@@ -1,0 +1,13 @@
+name: anomaly_detector
+language: Python
+variables:
+  - name: input
+    inputType: InputTopic
+    defaultValue: nasdaq_stocks
+  - name: output
+    inputType: OutputTopic
+    defaultValue: anomalies
+dockerfile: dockerfile
+runEntryPoint: main.py
+defaultFile: main.py
+libraryItemId: starter-transformation
