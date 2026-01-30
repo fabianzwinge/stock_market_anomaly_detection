@@ -24,6 +24,7 @@ This project performs real-time stock trade anomaly detection using Kafka for st
 	python main.py
 	```
 
+## Architecture
 The producer will stream trade data into Kafka, and the detector will process the stream and print detected anomalies.
 ```mermaid
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
@@ -39,3 +40,11 @@ classDef topic fill:#3E89B3;
 classDef topic stroke:#3E89B3;
 classDef topic color:white;
 ```
+
+## How the App looks like...
+
+The first image shows both topics (nasdaq_stocks and anomalies) listed in the Kafka broker.
+![Kafka Topics Overview](img/topics.png)
+
+ The second image shows that an anomaly was detected and output for a transaction.
+![Anomaly Detected Example](img/anomaly.png)
